@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<center>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="textarea">input your Encode text:</label>
+        <textarea id="textarea" name="textarea" rows="" cols="50"></textarea>
+        <p>Enter the nNum :</p>
+        <input type="text" name="nNum" id="nNum" />
+        <p>Enter the zNum :</p>
+        <input type="text" name="zNum" id="zNum" />
+        <label for="RANDkey">*Enter your random key:</label>
+        <input type="text" name="RANDkey" id="RANDkey">
+        <p>If you have not a random key dont fill it.</p>
+        <hr>
+        <button type="submit" class="btn btn-primary mb-3">Decode</button>
+    </form>
+    <br />
+    <a href="{% url 'homepage' %}"><button type="button" class="btn btn-dark" style="margin-left: 10">
+            Back to Home page
+        </button></a>
+</center>
+{% endblock %}

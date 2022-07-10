@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<center>
+    <a href="{% url 'Warn' %}">
+        <div class="alert alert-warning" role="alert">Important tips Please read it before use</div>
+    </a>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="story">input your text:</label>
+
+        <textarea id="story" name="textarea" rows="" cols="50"></textarea>
+        <label for="RANDkey">*your random key:</label>
+        <input type="text" name="RANDkey" id="RANDkey">
+        <br>
+        <small>If you want to change keys with a number you want, fill this field with a number between<span
+                style="color: crimson;">(1,10)</span><br>Now, if you input a number higher than 10 or smaller than 1, it
+            means you didn't use a random key.</small>
+        <hr>
+        <button type="submit" class="btn btn-primary mb-3">Encode</button>
+
+    </form>
+    <br>
+    <a href="{% url 'homepage' %}"><button type="button" class="btn btn-dark" style="margin-left: 10;">Back to Home
+            page</button></a>
+
+</center>
+
+</html>
+{% endblock %}

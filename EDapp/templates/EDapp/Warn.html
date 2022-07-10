@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<center>
+    <br>
+    <div class="card" style="width: 35rem;">
+        <div class="card-body">
+          <h5 class="card-title"><Important/h5>
+          <p class="card-text">This web app is just a simple test project so dont Enter important text. in normally this is fine but if something happen and this webapp cannot recover you data this is not the app fault</p>
+          <p class="card-text">The encoded keys to return your encoded text change every 2 days so you can't decode it after two days, but if you need the data you can contact me to give you the keys(I have a backup for every key list).​​​​</p>          
+          <p class="card-text">Only support English alfabet and number and <br> ["+", "'", ":", "/", ",", "?", "!", ")", "(", "."] <br>if you need other things add it in my GitHub.</p>
+          <a href="{% url 'Encoder' %}" class="card-link">Encoder</a>
+          <a href="{% url 'Decoder' %}" class="card-link">Decoder</a>
+        </div>
+      </div>
+      <br>
+      <a href="{% url 'homepage' %}"><button type="button" class="btn btn-dark" style="margin-left: 10;">Back to Home page</button></a>
+</center>
+{% endblock %}

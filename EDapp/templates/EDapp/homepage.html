@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<div class="container">
+    <h1>How it works?</h1>
+    <p>
+    you just need go to the encoder page and fill the form with you text and click on the submit button.
+    then you will get the encoded text.
+    Now for decode the encode text you <span style="color: #cc3300;">need 'Z number' and 'N number'</span> so you need
+    write these two number somewhere.
+    Then go to the decoder page and fill the form with the encoded text and enter the 'N number and Z number' and click
+    on the submit button.
+    then you will get the decoded text.
+    <br>
+    Also you can use a number to change the keys. so if you use it you need to write the number in the form.
+    <br><a href="{% url 'Warn' %}"><span style="color: #cc3300;">pleaze read this warning before you use this
+            app.<span></a>
+    </p>
+    <center>
+        <a href="{% url 'Encoder' %}"><button type="button" class="btn btn-dark">Encoder</button></a>
+        <a href="{% url 'Decoder' %}"><button type="button" class="btn btn-dark">Decoder</button></a>
+    </center>
+    <h3>How can I trust you?</h3>
+    <p>This project is an open sourse and you can see the code i never save your text.
+        As you can see my code is not a best so maby you can help me to improve it.
+        <br>
+        My GitHub address <a href="https://github.com/houshmand-2005/">click here</a>
+    </p>
+</div>
+
+<div class="text-center p-3" style="color: rgb(4, 5, 5);">
+    <a href="https://github.com/houshmand-2005/">github.com/houshmand-2005/</a>
+    <span style="color: #00ADB5;">RmzHsash</span>
+</div>
+{% endblock %}

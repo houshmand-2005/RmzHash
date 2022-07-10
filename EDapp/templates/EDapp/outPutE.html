@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<center>
+    <h2>your Encode text :</h2>
+    <textarea id="myInput" cols="50" rows="">{{ the_string }}</textarea>
+    <p>{{nNUM}}</p>
+    <p>{{zNUM}}</p>
+    {% if show_code == True %}
+    <p>your key : <span style="color: crimson;">{{bnnum}}</span>  you need this number for decode.</p>
+    {% endif %}        
+    <br>
+    <hr>
+    <button type="submit" class="btn btn-primary mb-3" onclick="myFunction()">
+        Copy text
+    </button>
+    <h2><a href="{% url 'Decoder' %}" target="_blank">Decode your text</a></h2>
+    <br />
+    <a href="{% url 'homepage' %}"><button type="button" class="btn btn-dark" style="margin-left: 10">
+            Back to Home page
+        </button></a>
+</center>
+
+<script>
+    function myFunction() {
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        navigator.clipboard.writeText(copyText.value);
+        alert("Text copied!");
+    }
+</script>
+{% endblock %}
