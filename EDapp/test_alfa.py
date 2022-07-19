@@ -2,8 +2,31 @@ import random as random
 randnum = random.randint(12, 100)
 
 
+def has_duplicates_rand(randnum, bnnum):
+    """ This func can find out 
+        if our keys are use before tell you True or False
+    """
+    keys_nn = {}
+    n = 0
+    for alfa in Dic_All_Alfa("", "", "True","", ""):
+        keys_nn[n] = Dic_All_Alfa("False", f"{alfa}", "False", "","") + bnnum - randnum
+        n = n + 1
+    # print(keys_nn)
+    HasDup = len(keys_nn) != len(set(keys_nn.values()))  
+    return HasDup       
+
+
 def Dic_All_Alfa(runtest, prammter, needAll, doRand, getRandNUM):
+    """
+    Note for this func :  
+    Dic_All_Alfa(has dup for orginal list,
+    give you one of the value by the key,
+    give you all of the keys,
+    randomaze vlaue(dont use for each user this is global),
+    create a new random number)
+    """
     dic_all_alfa = {
+        # "your key":your value must *int* and lenght of values must be *11*. like ==> 'a' : 12345678910,
         '\n': 'ADD KEY HERE IN NUM',
         '+': 'ADD KEY HERE IN NUM',
         "'": 'ADD KEY HERE IN NUM',
