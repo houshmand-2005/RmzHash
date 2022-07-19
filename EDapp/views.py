@@ -1,13 +1,28 @@
 from django.shortcuts import render
-from .test_alfa import Dic_All_Alfa
+from .test_alfa import Dic_All_Alfa, has_duplicates_rand
 import os
 import random as random
+from django.views import View
 # Create your views here.
+
+
+"""
+How use Dic_All_Alfa : 
+def Dic_All_Alfa(runtest, prammter, needAll, doRand, getRandNUM):
+    (has dup for orginal list,
+    give you one of the value by the key,
+    give you all of the keys,
+    randomaze vlaue(dont use for each user this is global),
+    create a new random number)
+"""
+
+
 def homepage(request):
     return render(request, 'EDapp/homepage.html')
 
-def Encoder(request):
-    if request.method == 'POST':
+
+class EnCoder(View):
+    def post(self, request):
         try:    
             show_code = False
             randnum = random.randint(23, 331)
@@ -19,12 +34,20 @@ def Encoder(request):
             my_str = str(my_str)
             out_str = ([''] * len(my_str)) + ['1']
             num = 0
+            # if request.POST.get('RANDkey') != "" & int(request.POST.get('RANDkey')) < 10:
+            #     if int(request.POST.get('RANDkey')) > 0:
+            #         bnnum = int(request.POST.get('RANDkey')) 
+            # else:
+            #     bnnum = 0 
             if request.POST.get('RANDkey') != "":
                 if int(request.POST.get('RANDkey')) < 11:
                     if int(request.POST.get('RANDkey')) > 0:
                         bnnum = int(request.POST.get('RANDkey')) # i KNOW THAT IT IS BAD CODE, BUT I DONT HAVE TIME TO FIX IT :)
             if request.POST.get('RANDkey') == "":
                 bnnum = 0
+            if has_duplicates_rand(randnum,bnnum) == True:
+                print("I found a *has_duplicates_rand*")
+                randnum = random.randint(23, 331)
             for i in range(len(my_str)):
                 for alfa in Dic_All_Alfa("False", "", "True","", ""):
                     if my_str[i] == f"{alfa}":
@@ -42,9 +65,9 @@ def Encoder(request):
             return render(request, 'EDapp/outPutE.html',context)
         except:
             return render(request, 'EDapp/Encode.html')
-
-    if request.method == 'GET':
+    def get(self, request):
         return render(request, 'EDapp/Encode.html')
+        
 
 def Decoder(request):
     bnnum = 0 
@@ -52,6 +75,11 @@ def Decoder(request):
     fd = 0
     if request.method == 'POST':
         try:
+            # if request.POST.get('RANDkey') != "" & int(request.POST.get('RANDkey')) < 10:
+            #     if int(request.POST.get('RANDkey')) > 0:
+            #         bnnum = int(request.POST.get('RANDkey')) 
+            # else:
+            #     bnnum = 0
             bnnum = 0  
             if request.POST.get('RANDkey') != "":
                 if int(request.POST.get('RANDkey')) < 10:
@@ -82,6 +110,7 @@ def Decoder(request):
             return render(request, 'EDapp/Decoder.html')
     if request.method == 'GET':
         return render(request, 'EDapp/Decoder.html')
+
 
 def Warn(request):
     return render(request, 'EDapp/Warn.html')
