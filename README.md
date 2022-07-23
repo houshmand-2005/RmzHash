@@ -13,3 +13,4 @@ then
 ```bash
 python ./manage.py runserver
 ```
+**This project is just a test and don't enter important information.**
