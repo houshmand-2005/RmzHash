@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<center>
+  <h2>your Encode text :</h2>
+  <textarea id="myInput" cols="50'" rows="">{{text}}</textarea>
+  <br />
+  <hr />
+  <button type="submit" class="btn btn-primary mb-3" onclick="myFunction()">
+    Copy text
+  </button>
+  <br />
+
+</center>
+<script>
+  function myFunction() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    navigator.clipboard.writeText(copyText.value);
+    alert("Text copied!");
+  }
+</script>
+{% endblock %}

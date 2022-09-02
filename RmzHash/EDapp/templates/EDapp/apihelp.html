@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="margin-left: 40px;">
+<p>encode : api/encode/</p>
+<p>python Api sample : </p>
+<code>
+        import requests <br>
+        urlpath = 'http://127.0.0.1:8000/api/encode/upload/' <br>
+        test_file = open("your_file.txt", "r") <br>
+        # If you want to change keys with a number you want, fill this field with a number between(1,10) <br>
+        # Now, if you input a number higher than 10 or smaller than 1, it means you didn't use a random key. <br>
+        test_response = requests.post(urlpath, files = {"file_uploaded": test_file}, data = {"RANDkey": "0"}) <br>
+        print(test_response) # Response [200] <br>
+        print(test_response.text) <br>
+        # -> <br>
+        # ["http://127.0.0.1:8000/textfiles/your_file.txt",["n:",1111],["z:",111],0] <br>
+    </code>
+<hr>
+<p>decode : api/decode/ </p>
+<p>python Api sample : </p>
+<code>
+        import requests <br>
+        urlpath = 'http://127.0.0.1:8000/api/decode/upload/' <br>
+        test_file = open("your_encoded_file.txt", "r") <br>
+        test_response = requests.post(urlpath, files = {"file_uploaded": test_file}, data = {"RANDkey": "0", "nNum":"1111", "zNum": "111"}) <br>
+        print(test_response) # Response [200] <br>
+        print(test_response.text) <br>
+        # -> <br>
+        # "http://127.0.0.1:8000/textfiles/your_encoded_file_somerandom.txt" <br>
+    </code>
+</div>
+<br>
+{% endblock %}

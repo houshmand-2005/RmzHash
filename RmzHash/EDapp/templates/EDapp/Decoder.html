@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %}
+<center>
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="textarea">input your Encode text:</label>
+    <textarea id="textarea" name="textarea" rows="" cols="50"></textarea>
+    <p>Enter the nNum :</p>
+    <input type="text" name="nNum" id="nNum" />
+    <p>Enter the zNum :</p>
+    <input type="text" name="zNum" id="zNum" />
+    <label for="RANDkey">*Enter your random key:</label>
+    <input type="text" name="RANDkey" id="RANDkey" />
+    <p>If you have not a random key dont fill it.</p>
+    <hr />
+    <div class="mb-3" style="margin-left: 25%; margin-right: 25%">
+      <label for="formFileSm" class="form-label"
+        >Or use upload file(just .txt and 1.5 MB)</label
+      >
+      <input
+        name="user_txt_upload"
+        class="form-control form-control-sm"
+        id="formFileSm"
+        type="file"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary mb-3">Decode</button>
+  </form>
+  <br />
+</center>
+{% endblock %}
