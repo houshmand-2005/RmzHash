@@ -21,7 +21,7 @@ like this :
 
 <img src="https://github.com/houshmand-2005/RmzHash/blob/cc5e0adf9256dc55936a6d23e8ad5c23a3b1a6d9/images/randomazer_hash.jpg" alt="randomazer_hash" width="1000">
  
-now replace this dic to RmzHash/RmzHash/EDapp/alfa_data.py dic. now it works but if you have problem contact to me
+now replace this dic to RmzHash/EDapp/alfa_data.py dic. now it works but if you have problem contact to me
 
 then 
 ```bash
