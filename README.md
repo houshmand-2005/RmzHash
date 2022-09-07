@@ -37,12 +37,12 @@ as you can see the test_api folder the API needs these inputs:
 
 python code for this: 
 
-<code>
+```bash
 test_response = requests.post(
     urlpath, files={"file_uploaded": test_file}, data={"RANDkey": "0"})
     
 print(test_response.text) # the url of encode it file random key the n number and the z number
-</code>
+```
 
 then this API gievs to you some number with this number you can decode it so save them and the encoded file so you must save the file in .txt format.
 
@@ -54,12 +54,12 @@ then this API gievs to you some number with this number you can decode it so sav
 
 python code for this: 
 
-<code>
+```bash
 test_response = requests.post(urlpath, files={"file_uploaded": test_file}, data={
                               "RANDkey": "0", "nNum": "138", "zNum": "354"})
 
 print(test_response.text) # url of encode it file
-</code>
+```
 
 if you want change a part of code you can use a pull request.
 
