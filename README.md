@@ -61,6 +61,8 @@ test_response = requests.post(urlpath, files={"file_uploaded": test_file}, data=
 print(test_response.text) # url of encode it file
 ```
 
+user uploads files save in RmzHash/textfiles/ folder
+
 if you want change a part of code you can use a pull request.
 
 **This project is just a test and don't enter important information.**
