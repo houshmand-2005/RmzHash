@@ -2,7 +2,7 @@
 
 <img src="https://github.com/houshmand-2005/RmzHash/blob/cc5e0adf9256dc55936a6d23e8ad5c23a3b1a6d9/images/RMZhash.jpg" alt="RMZhash" width="1000">
 
-A small funny project :) you can use it online from here : [http://rmzhash.pythonanywhere.com/](http://rmzhash.pythonanywhere.com/)
+A small funny project :) you can use it online from here : [https://rmzhash.pythonanywhere.com/](https://rmzhash.pythonanywhere.com/)
 
 this app can encode you text to a **encrypted** text so no one can find out what you type then you can decode it to normall text
 but just you can decode it becase this app gives some **number and keys** to you and if somone doesn't have it they can't decode your text
