@@ -16,7 +16,10 @@ cd RmzHash
 pip install -r requirements.txt
 ```
 
-then you need set the keys(**Your text is encrypted with these keys**) you can set keys automatically by the **randomazer_hash.py** this script gives you a random key for each parameter
+**This part is optional!**<br>
+
+if you want set the keys by your self you can do this:<br>
+for set the keys(**Your text is encrypted with these keys**) you can set keys automatically by the **randomazer_hash.py** this script gives you a random key for each parameter
 like this : 
 
 <img src="https://github.com/houshmand-2005/RmzHash/blob/cc5e0adf9256dc55936a6d23e8ad5c23a3b1a6d9/images/randomazer_hash.jpg" alt="randomazer_hash" width="1000">
@@ -61,10 +64,10 @@ test_response = requests.post(urlpath, files={"file_uploaded": test_file}, data=
 print(test_response.text) # url of encode it file
 ```
 
-user uploads files save in RmzHash/textfiles/ folder
-
+user uploads files save in RmzHash/textfiles/<br>
+⭐What's new:
+- Now the keys made random and you dont need to do it yourself
+houshmand 2005 
 if you want change a part of code you can use a pull request.
 
 **This project is just a test and don't enter important information.**
-
-houshmand 2005 
