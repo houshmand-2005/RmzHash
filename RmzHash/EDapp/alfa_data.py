@@ -1,6 +1,8 @@
 import random as random
-randnum = random.randint(12, 100)
+UseRandomKey = True  # if you want to Use the random key on keep it True 
 dic_all_alfa = {
+    # in normally if UseRandomKey variable is True the values makes random
+    # but if you need to change the radnom keys do this :  
     # you can generate keys by randomazer_hash.py in repository
     # "your key":your value must *int* and lenght of values must be *11*. like ==> 'a' : 12345678910,
     '\n': 'ADD KEY HERE IN NUM',  # like '\n': 23617535821
@@ -81,6 +83,22 @@ dic_all_alfa = {
 
 
 class manager:
+    # with this the keys changed for each user
+    def seed(self, seednumber):
+        if UseRandomKey:
+            global dic_all_alfa
+            counter_dic = 0 
+            ra_dic_all_alfa= {}
+            random.seed(int(seednumber))
+            for alfa in dic_all_alfa:
+                ra_dic_all_alfa[alfa] = random.randint(10000000001, 99578000011)
+                counter_dic = counter_dic + 1
+            dup = len(ra_dic_all_alfa) != len(set(ra_dic_all_alfa.values()))
+            if dup != True:
+                dic_all_alfa = ra_dic_all_alfa
+            else:
+                print("DUP 92")
+
     def runtest(self, listtotest):
         """
         test keys has a duplicates

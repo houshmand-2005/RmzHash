@@ -79,6 +79,10 @@ class EnCoder(View):
                 bnnum = int(request.POST.get('RANDkey'))
             else:
                 bnnum = 0
+
+            nNUMber = "n:", int((len(my_str) * 3) + cnum)
+            zNUMber = "z:", (int(randnum) * 2) + 2
+            mang_command.seed((int(randnum) * 2) + 2)
             if mang_command.has_duplicates_rand(randnum, bnnum) == True:
                 print("I found a *has_duplicates_rand*")
                 print(
@@ -93,8 +97,6 @@ class EnCoder(View):
                         break
             listToStr = ''.join([str(asd) for asd in out_str])
             # THIS IS A BAD PROGRAM ? SO DONT USE IT LOL :) NO REALLY THIS IS JUST FOR TEST AND FOR FUN
-            nNUMber = "n:", int((len(my_str) * 3) + cnum)
-            zNUMber = "z:", (int(randnum) * 2) + 2
             bin_itemf = format(int(listToStr), "b")
             if bnnum != 0:
                 show_code = True
@@ -156,6 +158,7 @@ def Decoder(request):
             out_str = [''] * n
             rand_num1 = int(request.POST.get('zNum'))
             rand_num1 = int((rand_num1 - 2) / 2)
+            mang_command.seed(request.POST.get('zNum'))
             kys = mang_command.needAll()
             for i in range(len(my_str)):
                 for alfa_2 in mang_command.needAll():
