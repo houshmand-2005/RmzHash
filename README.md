@@ -67,7 +67,7 @@ print(test_response.text) # url of encode it file
 user uploads files save in RmzHash/textfiles/<br>
 ## ⭐What's new:
 - Now the keys made random and you dont need to do it yourself
-houshmand 2005 
+
 if you want change a part of code you can use a pull request.
 
 **This project is just a test and don't enter important information.**
