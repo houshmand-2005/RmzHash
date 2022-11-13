@@ -31,6 +31,7 @@ then
 python ./manage.py runserver
 ```
 
+<hr>
 you can use upload file or type your text also use the API for useing API with python you can see test_api folder
 
 as you can see the test_api folder the API needs these inputs:
