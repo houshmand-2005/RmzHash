@@ -15,6 +15,12 @@ like :
 cd RmzHash
 pip install -r requirements.txt
 ```
+# Or use docker
+```bash
+cd RmzHash
+docker build -t RmzHashimage .
+docker run -d RmzHashimage
+```
 
 **This part is optional!**<br>
 
