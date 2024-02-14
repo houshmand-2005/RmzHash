@@ -1,4 +1,4 @@
-FROM python:3.11.1-alpine
+FROM python:3.12.2-alpine
 
 WORKDIR /rmzhash
 
@@ -9,10 +9,6 @@ RUN pip install --no-cache-dir --upgrade -r /rmzhash/requirements.txt
 COPY . /rmzhash/
 
 EXPOSE 8000
-# set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
 # install dependencies
 RUN pip install --upgrade pip
 
